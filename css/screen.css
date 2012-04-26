@@ -1,0 +1,248 @@
+/**
+ * "Yet Another Multicolumn Layout" - YAML CSS Framework
+ *
+ * default screen stylesheet - PAGE-layout type layout
+ *
+ * @copyright       Copyright 2005-2012, Dirk Jesse
+ * @license         CC-BY 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-CDL (http://www.yaml.de/license.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         4.0
+ * @revision        $Revision: 698 $
+ * @lastmodified    $Date: 2012-02-02 21:53:50 +0100 (Do, 02 Feb 2012) $
+ */
+
+@media screen {
+
+	html {
+		height: 100%;
+	}
+
+	/* force vertical scrollbar */
+	body {
+		position:relative;
+		overflow-y: scroll;
+		background: #161e21;
+		height: 100% !important;
+		font-size:100%; 
+	}
+
+	/* Layout Module Configuration & fallback for media queries */
+	.ym-wrapper {
+		min-width: 760px;
+		margin: 0 auto;
+	}
+
+	.oldie .ym-wrapper {
+		width: 960px;
+		margin: 0 auto;
+	}
+
+	.language-bg {
+		top: 0;
+		left: 0;
+		position: absolute;
+		height: 100%;
+		min-height: 100%;		
+		background: #fff;
+		width: 50%;
+		min-width: 480px;
+		zoom: 1;
+	}
+
+	.language {
+		position: relative;
+		z-index: 1;
+		background: #fff;
+	}
+
+	.language h1,
+	.language h2,
+	.language h5,
+	.language p {
+		font-family: Consolas, "Lucida Console", "Andale Mono", "Bitstream Vera Sans Mono", "Courier New", Courier;		
+	}
+
+	.language h1 {
+		color: red;
+	}
+	.language span {
+		color: green;
+	}
+
+	.framework {
+		font-size: 87.5%;
+		background: #161e21;
+		color: #fff;
+		text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+	}
+
+	.framework h1,
+	.framework h2 {
+		font-family: 'Yanone Kaffeesatz', Arial, Helvetica, sans-serif;
+		font-weight:bold;
+		font-size:120px;
+		color:#8b8f90;
+		border: 0 none;
+		text-shadow: 1px 1px 1px rgb(0,0,0);
+	}
+
+	.framework h1 {
+		margin: 0 0 0.15em 0;
+	}
+
+	.framework h2 {
+		position:relative;
+		top: -16px;
+		left: 4px;
+		letter-spacing:8px;
+		font-size:45px;
+		line-height:85%;
+		margin:0;
+	}
+
+	.framework p {
+		font-size: 1.125em;
+	}
+
+	.framework p em {
+		color: #fff;
+		color: rgba(255,255,255,.75);
+		font-family: "Times New Roman", Times, serif;
+		font-size-adjust: 0.55;
+	}
+
+	.framework h1 {
+		background: transparent;
+		color: #fff;
+	}
+
+	.framework h1 span {
+		display:inline-block;
+		overflow: hidden;
+		height: 0;
+		width: 235px;
+		padding-top: 78px;
+		margin-bottom: -2px;
+		background:url(../images/yaml-solo-transparent.png) no-repeat top left;
+	}
+
+	.framework h5 {
+		background: transparent;
+		color: #fff;
+	}
+
+	.framework span {
+		background: transparent;
+		color: #aaa;
+		font-weight: bold;
+	}
+
+	.ym-gbox {
+		min-height: 24em;
+		padding: 4em 72px 2em 72px;
+	}
+
+	.ym-gbox-link {
+		padding: 0 4em;
+	}
+
+	.oldie #yin-yang {
+		display: none;
+	}
+
+	#yin-yang {
+		width: 96px;
+		height: 48px;
+		background: #fff;
+		border-color: #161e21;
+		border-style: solid;
+		border-width: 2px 2px 50px 2px;
+		border-radius: 100%;
+		position: absolute;
+		margin: -50px 0 0 -50px;
+		top: 50%;
+		z-index: 100;
+		left: 50%;
+		box-shadow: 0 0 0px 2px #fff;
+	}
+
+	#yin-yang:before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 0;
+		background: #fff;
+		border: 18px solid #161e21;
+		border-radius: 100%;
+		width: 12px;
+		height: 12px;
+	}
+
+	#yin-yang:after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background: #161e21;
+		border: 18px solid #fff;
+		border-radius:100%;
+		width: 12px;
+		height: 12px;
+	}
+}
+
+/* reset fallback values in modern browsers */
+@media screen and ( min-width: 0px ) {
+	.ym-wrapper {
+		width: auto;
+		min-width: 0px;
+	}
+
+	.language-bg {
+		min-width: 0;
+	}
+}
+
+@media screen and ( max-width: 900px ) {
+
+	.language-bg {
+		display:none;
+	}
+
+	body {
+		text-align: center;
+	}
+
+	#yin-yang {
+		position: relative;
+		margin: -50px 0 0 -50px;
+		top: 0; z-index: 100;
+		top: 0;
+		left: 50%;
+	}
+
+	/* Linearisation for Grid- and Column-Module, based on CSS class .linearize-level-1 */
+	.linearize-level-1,
+	.linearize-level-1 > [class*="ym-g"] {
+		display: block;
+		float: none;
+		padding: 0;
+		margin: 0;
+		width: 100% !important;
+	}
+
+	.ym-gl .ym-gbox {
+		overflow: hidden; /* optional for containing floats */
+		padding: 1em 2em 72px 2em;
+		margin: 0;
+		min-height: 0;
+	}
+	.ym-gr .ym-gbox {
+		overflow: hidden; /* optional for containing floats */
+		padding: 0px 2em 1em 2em;
+		margin: 0;
+		min-height: 0;
+	}
+}
